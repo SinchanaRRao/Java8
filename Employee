@@ -1,0 +1,50 @@
+/*  Create an ArrayList of Employee(id, name, address,sal) objects and retrieve objects from ArrayList by using forEach() method of iterable interface.    */
+
+import java.util.*;
+
+public class Employee {
+private int id;
+private String name;
+private String address;
+private int sal;
+
+
+public Employee (int id, String name, String address, int sal) {
+ this.id = id;
+ this.name = name;
+ this.address = address;
+ this.sal = sal;
+ }
+ 
+ public int getId() {
+ return id;
+ }
+ 
+ public String getName() {
+ return name;
+ }
+ 
+ public String getAddress() {
+ return address;
+ }
+ 
+ public int getSal() {
+ return sal;
+ }
+ 
+ public static void main(String[] args) {
+ 
+ ArrayList<Employee> employees = new ArrayList<>();
+ employees.add(new Employee(1,"Ram","Bangalore",2000));
+ employees.add(new Employee(2,"Abhi","Chennai",8000));
+ employees.add(new Employee(3,"Tarun","Mumbai",1000));
+ 
+ employees.forEach(employees -> {
+ System.out.println("Employee ID" + employee.getID());
+ System.out.println("Employee Name" + employee.getName());
+ System.out.println("Employee Address" + employee.getAddress());
+ System.out.println("Employee Salary" + employee.getSal());
+ System.out.println("--------------------------------");
+ });
+ }
+ }
