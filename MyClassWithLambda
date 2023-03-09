@@ -1,0 +1,29 @@
+/* Create an interface WordCount with single abstract method int count(String str) to count number of words in a given string. Implement count(String str) method by using Lambda expression
+in an implementation class MyClassWithLambda and invoke it to display the result on the console */
+
+
+package Assignment;
+
+public interface Wordcount {
+  int count(String str);
+}
+
+public class MyClassWithLambda {
+
+  public static void main(String[] args) {
+    Wordcount countwords = (str) -> {
+    int c;
+    if(str == null || str.isEmpty()) {
+    return 0;
+    }
+    
+    String[] words = str.split("\\s+");
+    c = words.length;
+    return c;
+    
+    };
+    
+    int wordLength = countwords.count("This is lambda expression");
+    System.out.println(wordLength);
+    
+    }
