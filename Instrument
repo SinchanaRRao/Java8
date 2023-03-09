@@ -1,0 +1,38 @@
+/* Create 2 interfaces Piano and Guitar with single default method void play() with different implementations.
+Add single implementation class Instrument for both the interfaces. Solve method name ambiguity in Instrument class by using two different approaches.   
+*/
+
+/* Approach 1 */
+
+interface Piano {
+  default void playPiano() {
+   System.out.println("Piano music...");
+  }
+}
+
+
+interface Guitar {
+  default void playGuitar() {
+   System.out.println("Guitar music...");
+  }
+ }
+ 
+ class Instrument implements Piano,Guitar {
+ 
+  public void playPiano() {
+    Piano.super.play();
+   }
+   
+  public void playGuitar() {
+    Guitar.super.play();
+   }
+   
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Instrument instrument = new Instrument();
+    instrument.playPiano();
+    instrument.playGuitar();
+    }
+  }  
